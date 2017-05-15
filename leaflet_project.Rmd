@@ -1,0 +1,30 @@
+---
+title: "Leaflet Project"
+author: "Reinhard Stockinger"
+date: "15 Mai 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Instructions
+
+Create a web page using R Markdown that features a map created with Leaflet.
+Your webpage must contain the date that you created the document, and it must contain a map created with Leaflet.
+
+This document was created **2017-05-15**
+
+## The map of Autria
+
+This leaflet map uses tiles from the Austrian provider basemap.at
+
+```{r}
+library(leaflet)
+
+leaflet(width = 900,height = 600) %>%
+addProviderTiles("BasemapAT.basemap") %>%
+setView(13.3, 48.2, zoom=7) %>%
+addMarkers(lat=48.198518,lng=16.360925,popup="My Office")
+```
